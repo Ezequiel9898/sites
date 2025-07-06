@@ -2,12 +2,26 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+html, body {
+  background-color: #f5f5f5;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
-  font-family: 'Inter', sans-serif;
-  background: #F3F3F3;
-  color: #333;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
 }
 
 header {
@@ -17,6 +31,8 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 10px 115px;
+  position: relative;
+  flex-wrap: wrap;
 }
 
 .logo {
@@ -27,6 +43,45 @@ header {
 .logo img {
   width: 200px;
   margin-right: 10px;
+}
+
+#menu-aberto {
+  display: none;
+}
+
+.icone-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+  cursor: pointer;
+}
+
+.icone-menu span {
+  height: 4px;
+  background-color: white;
+  border-radius: 2px;
+  display: block;
+}
+
+.menu {
+  display: flex;
+  gap: 15px;
+}
+
+.menu a {
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  padding: 15px 13px;
+  background: #3D4C66;
+  border-radius: 4px;
+}
+
+.menu a:hover {
+  background: #2E3A4D;
 }
 
 .menu a {
@@ -67,8 +122,15 @@ header {
 }
 
 .texto-banner {
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 1;
+  text-align: left;
+  margin-left: 30px;
+  width: 100%;
+  padding: 0 20px;
 }
 
 .banner h1 {
@@ -358,7 +420,6 @@ header {
 .pagina-sobre {
   padding: 40px 115px;
   background: #f5f5f5;
-  font-family: 'Inter', sans-serif;
 }
 
 .intro-sobre h1 {
@@ -596,3 +657,306 @@ header {
 .links-rodape {
   display: block;
 }
+
+/* Até 1023px: Layout adaptado */
+@media (max-width: 1023px) {
+  header {
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .principal h2 {
+    font-size: 1.8rem;
+  }
+
+  .principal p {
+    font-size: 1.1rem;
+  }
+
+  .menu {
+    margin-top: 10px;
+  }
+
+  .menu a {
+    display: inline-block;
+    margin: 10px 5px;
+  }
+
+  .conteudo {
+    flex-direction: column;
+    padding: 20px;
+    display: flex;
+    gap: 35px;
+    padding: 0 115px 30px;
+}
+  }
+
+  .descubra {
+    margin: 20px;
+  }
+
+  .rodape {
+    padding: 30px 20px;
+  }
+
+  .rodape-conteudo {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .pagina-sobre,
+  .pagina-contato {
+    padding: 20px;
+  }
+
+  .formulario h2 {
+    margin-left: 0;
+  }
+
+  .conteudo-contato {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .formulario,
+  .informacoes {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .formulario h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .formulario input,
+  .formulario textarea {
+    font-size: 15px;
+  }
+
+  .formulario button {
+    font-size: 15px;
+  }
+
+  .box-contato,
+  .box-redes,
+  .box-faq {
+    padding: 15px;
+  }
+
+  .info-item {
+    align-items: flex-start;
+  }
+
+  .icones-redes a {
+    font-size: 18px;
+  }
+
+  .sobre-conteudo {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .missao,
+  .numeros {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .item {
+    flex: 1 1 45%;
+  }
+
+  .equipe {
+    padding: 20px 15px;
+  }
+
+  .cards-equipe {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .membro {
+    min-width: 0;
+  }
+
+  .membro img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .membro h3 {
+    font-size: 14px;
+  }
+
+  .cargo {
+    font-size: 13px;
+  }
+
+  .descricao {
+    font-size: 12px;
+  }
+
+/* Até 768px: Ajustes para tablets */
+@media (max-width: 768px) {
+  .principal h2 {
+    font-size: 2rem;
+  }
+  .principal p {
+    font-size: 1.2rem;
+  }
+  .banner {
+    padding: 60px 20px;
+    margin: 20px;
+  }
+
+  .banner h1 {
+    font-size: 22px;
+  }
+
+  .banner p {
+    font-size: 16px;
+  }
+
+  .imagem-banner {
+    object-position: center;
+  }
+
+  .principal img {
+    height: auto;
+  }
+
+  .acoes {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .cards-equipe {
+    flex-direction: column;
+  }
+
+  .galeria-container {
+    padding: 20px;
+  }
+
+  .formulario,
+  .informacoes {
+    padding: 15px;
+  }
+
+  .formulario h2 {
+    margin-left: 0;
+  }
+}
+
+/* Até 480px: Celulares */
+@media (max-width: 480px) {
+  .principal h2 {
+    font-size: 2.2rem;
+  }
+  .principal p {
+    font-size: 1.3rem;
+  }
+  .menu a {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .banner h1 {
+    font-size: 18px;
+  }
+
+  .banner p {
+    font-size: 14px;
+  }
+
+  .descubra h2 {
+    font-size: 22px;
+  }
+
+  .descubra p {
+    font-size: 16px;
+  }
+
+  .botao-explorar,
+  .botao-contato {
+    font-size: 16px;
+    padding: 10px 16px;
+  }
+
+  .rodape {
+    text-align: center;
+  }
+
+  .redes-sociais a {
+    margin: 0 5px;
+  }
+
+  .conteudo-contato {
+    flex-direction: column;
+  }
+
+  .intro-contato h1,
+  .intro-sobre h1 {
+    font-size: 22px;
+  }
+
+  .intro-contato p,
+  .intro-sobre p {
+    font-size: 14px;
+  }
+
+  .formulario button {
+    width: 100%;
+  }
+
+  .missao h2,
+  .numeros h2,
+  .equipe h2 {
+    font-size: 18px;
+  }
+
+  .item p {
+    font-size: 16px;
+  }
+
+  .item i {
+    font-size: 32px;
+  }
+
+  .missao,
+  .numeros,
+  .formulario,
+  .informacoes,
+  .membro {
+    min-width: 100% !important;
+  }
+
+  .cards-equipe {
+    gap: 12px;
+  }
+
+  .membro img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .membro h3 {
+    font-size: 13px;
+  }
+
+  .cargo {
+    font-size: 12px;
+  }
+
+  .descricao {
+    font-size: 11px;
+  }
+
+  .item {
+    flex: 1 1 100%;
+  }
+}
+
+
